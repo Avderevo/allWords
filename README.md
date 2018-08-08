@@ -14,8 +14,9 @@ The result can be obtained in one of three formats:
 ### Install modules:
 
 ``` 
-   $ pip install -- upgrade -r requirements.txt --
+   $ pip install -- upgrade -r requirements.txt --   
 ```
+
 
 ### To start, you must specify the required arguments:
 
@@ -27,8 +28,8 @@ The result can be obtained in one of three formats:
 5. format of result: **json, csv, console**
 
 
-### Example
 
+### Example:
 
 ```
 $ python3 main.py https://github.com/Avderevo/word-statistic func noun json

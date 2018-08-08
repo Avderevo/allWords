@@ -22,7 +22,7 @@ The result can be obtained in one of three formats:
 
 
 1. script name: **main.py**
-2. url of the github repository:***some of githab repository***
+2. url of the github repository: ***some of githab repository***
 3. one of the names of objects: **func, class, variable**
 4. part of speech: **verb, noun**
 5. format of result: **json, csv, console**

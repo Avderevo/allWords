@@ -14,7 +14,7 @@ The result can be obtained in one of three formats:
 ### Install modules:
 
 ``` 
-   $ pip install -- upgrade -r requirements.txt --   
+   $ pip install requirements.txt   
 ```
 
 

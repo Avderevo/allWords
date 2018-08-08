@@ -1,24 +1,36 @@
-<h2>Analysis and statistics of words in the code</h2>
+#Analysis and counting of frequent words of code
 
-<h4>Written on the python version 3.5.2 in OS ubuntu 16.4</h4>
+This program creates statistics of the most frequent verbs or nouns in variable names, function names, class names.
 
-The script creates a directory and clones the repository from the githab.
-Then creates <b>Abstract Syntax Trees</b> of all python files from the repository.
+This version of the project loads the repository from the githab and analyzes the code written on the python.
 
-The ast module extracts function names, class names, variable names. Breaks them into separate words and cuts off names with double underscore.
- 
-Generates statistics of the most frequently used words in names.
+The result can be obtained in one of three formats:
 
-Module <b>NLTC</b> analyzes the most frequent verbs and nouns in names.
-
-
-<b>Install modules:</b>
+- json
+- csv
+- console
 
 
+###Install modules:
+
+'''
 $ pip install --upgrade -r requirements.txt
+'''
+
+###To start, you must specify the required arguments:
 
 
-<b>Run main.py with an argument in the form of a link to the repository</b>
+1. script name: main.py
+2. url of the github repository: some of githab repository
+3. one of the names of objects: func, class, variable
+4. part of speech: verb, noun
+5. format of result: json, csv, console
 
 
-$ python3 main.py https://github.com/Avderevo/word-statistic
+### Example
+
+
+'''
+$ python3 main.py https://github.com/Avderevo/word-statistic func noun json
+'''
+

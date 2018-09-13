@@ -1,30 +1,22 @@
-from git import Repo
-import os
-import urllib.request
+from git import Repo, exc
+from requests import head
 
 
-def create_folder(url, folder='repos'):
-    if os.name == 'nt':
-        REPO_DIR = r'D:/' + folder
-    else:
-        REPO_DIR = '/tmp/' + folder
+import logging
+logging.basicConfig(format=u' %(message)s', level=logging.INFO)
 
-    folder_name = os.path.join(REPO_DIR, str(url).split('/')[-1])
+
+def clone_repo(git_url, folder):
 
     try:
-        if not os.path.exists(folder_name):
-            os.makedirs(folder_name)
+        if str(head(git_url).status_code) == '200':
 
-    except OSError:
-        print ('Error: Creating directory. ' + folder_name)
+            Repo.clone_from(git_url, folder)
 
-    return folder_name
+        else:
+            logging.info('Bad status code url {}'.format(git_url))
+            folder = None
 
-
-def clone_repo_to_folder(git_url):
-
-    repo_folder = create_folder(git_url)
-
-    if str(urllib.request.urlopen(git_url).getcode()) == '200':
-        Repo.clone_from(git_url, repo_folder)
-    return repo_folder
+    except exc.GitCommandError:
+        logging.info('Repository {} does not exist'.format(git_url))
+    return folder

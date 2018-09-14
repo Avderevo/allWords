@@ -104,5 +104,8 @@ Save to file:
 $ allwords --repo https://github.com/Avderevo/IZORM  -c verb  -n func -o file --format json
 
 The result file is saved to the directory "/tmp/words_statistic_qvygrjc1"
-
+```
+result:
+```
+{"args": 2, "update": 3, "filter": 3, "name": 2, "cursor": 2, "arg": 4, "field": 5, "order": 3, "list": 2, "table": 2}
 ```

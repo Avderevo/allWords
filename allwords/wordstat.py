@@ -106,6 +106,7 @@ def get_arg():
         if not project:
             logging.info(
                 'could not load repository by URL "{}"'.format(argspace.repo_url))
+            rm_dir(folder)
             return
 
     if argspace.extension != 'py':

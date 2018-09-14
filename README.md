@@ -1,4 +1,4 @@
-# Analysis and counting of frequent words of code
+# allWords
 
 This program creates statistics of the most frequent verbs or nouns in variable names, function names, class names.
 
@@ -11,7 +11,7 @@ The result can be obtained in one of three formats:
  - console
 
 
-### Install modules:
+# Install:
 
 ``` 
    $ pip install requirements.txt   

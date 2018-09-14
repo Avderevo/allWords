@@ -1,7 +1,5 @@
 from nltk import pos_tag
-#import nltk
 
-#nltk.download('averaged_perceptron_tagger')
 NLTK_TEGS = {'verb': ['VB', 'VBR'], 'noun': ['NNS', 'NN']}
 
 

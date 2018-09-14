@@ -1,5 +1,5 @@
 from git import Repo, exc
-from requests import head
+from urllib import request
 
 
 import logging
@@ -9,7 +9,7 @@ logging.basicConfig(format=u' %(message)s', level=logging.INFO)
 def clone_repo(git_url, folder):
 
     try:
-        if str(head(git_url).status_code) == '200':
+        if str(request.urlopen(git_url).getcode()) == '200':
 
             Repo.clone_from(git_url, folder)
 

@@ -16,7 +16,7 @@ def parse_args():
     parser.add_argument(
         '-d', '--dirs',
         dest='dir_path',
-        help='The path to the project.'
+        help='The path to the local project.'
     )
     parser.add_argument(
         '-t', '--top',

@@ -3,6 +3,9 @@ from os.path import join, dirname
 
 setup(
     name='allWords',
+    entry_points={'console_scripts': [
+        'allwords = allwords.wordstat:get_arg',
+    ]},
     version='0.1',
     packages=find_packages(),
     long_description=open(join(dirname(__file__), 'README.md')).read(),

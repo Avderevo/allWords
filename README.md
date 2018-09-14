@@ -35,27 +35,74 @@ $ python3
 >>> import nltk
 >>> nltk.download('averaged_perceptron_tagger')
 ```
+The program can store the results in formatst:
+- json
+- csv
+or outputting the result to the console
+ 
 # Use
 
 
-
-
-
-
 ###  To start, you must specify the required arguments:
-
-
-1. script name: **main.py**
-2. url of the github repository: ***some of githab repository***
-3. one of the names of objects: **func, class, variable**
-4. part of speech: **verb, noun**
-5. format of result: **json, csv, console**
-
-
-
+```
+usage: allwords [-h] [-d DIR_PATH] [-t TOP_SIZE] [--repo REPO_URL]
+                [-c {noun,verb}] [-n {var,func,class}] [-o {console,file}]
+                [--format {json,csv}] [--ext EXTENSION]
+```
+### Arguments:
+```
+optional arguments:
+  -h, --help            show this help message and exit
+  
+  -d DIR_PATH, --dirs DIR_PATH
+                        The path to the local project.
+                        
+  -t TOP_SIZE, --top TOP_SIZE
+                        The size of the top verbs, default is 10.
+                        
+  --repo REPO_URL       URL of the project repository.
+  
+  -c {noun,verb}, --category {noun,verb}
+                        Select a "noun" if you want statistics of nouns.Or
+                        "verb" if statistics verbs. "verb" are by default.
+                        
+  -n {var,func,class}, --name {var,func,class}
+                        Choose: "verb" - if you keep verbs."noun" - if you
+                        want nouns."class" - if you want statistics on classe
+                        names
+                        
+  -o {console,file}, --output {console,file}
+                        Report output method.Possible value: console - output
+                        result script to console, file - output result script
+                        to file.
+                        
+  --format {json,csv}   Report output format.Possible value: json - save
+                        report in json format, csv - save report in csv
+                        format.
+```
 ### Example:
 
+Outputting the result to the console.
 ```
-$ python3 main.py https://github.com/Avderevo/word-statistic func noun json
-```
+$ allwords --repo https://github.com/Avderevo/IZORM  -c noun  -n func -o console
 
+  Top 10 nouns:
+  field      --- 5
+  arg        --- 4
+  filter     --- 3
+  update     --- 3
+  order      --- 3
+  args       --- 2
+  name       --- 2
+  connect    --- 2
+  list       --- 2
+  cursor     --- 2
+
+```
+Save to file:
+```
+$ allwords --repo https://github.com/Avderevo/IZORM  -c verb  -n func -o file --format json
+
+The result file is saved to the directory "/tmp/words_statistic_qvygrjc1"
+
+```

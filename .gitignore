@@ -1,0 +1,8 @@
+
+*.py[cod]
+*.sqlite
+.direnv
+.envrc
+env
+venv
+.git/*
